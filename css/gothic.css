@@ -1,0 +1,1048 @@
+/* ==========================================================================
+   GOTHIC / DARK FANTASY RPG DESIGN SYSTEM - PROJECT 69
+   Profile: Nattawut Sukkijpagorn (Accounting Supervisor, SCG)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Spectral:wght@400;600;700&display=swap');
+
+:root {
+  /* Gothic Abyssal Color Palette */
+  --bg-abyss: #0d090a;
+  --bg-crypt: #140d10;
+  --bg-chamber: #1a1014;
+  --bg-card: rgba(22, 14, 18, 0.92);
+
+  --crimson-blood: #881337;
+  --ruby-red: #e11d48;
+  --ruby-glow: rgba(225, 29, 72, 0.4);
+  --mythic-gold: #d4af37;
+  --ancient-gold: #b38f28;
+  --antique-bone: #e2d9d2;
+  --bone-dim: #9c8e85;
+  --obsidian-dark: #070506;
+
+  /* Typography */
+  --font-gothic: 'Cinzel', serif;
+  --font-decorative: 'Cinzel Decorative', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-body: 'Prompt', 'Spectral', serif;
+
+  /* Borders & Crimson Lighting */
+  --border-stone: 1.5px solid #381f25;
+  --border-crimson: 1.5px solid #881337;
+  --border-gold: 1.5px solid #d4af37;
+  --glow-crimson: 0 0 25px rgba(225, 29, 72, 0.3), inset 0 0 15px rgba(136, 19, 55, 0.3);
+  --glow-ruby: 0 0 20px rgba(225, 29, 72, 0.6);
+  --glow-gold: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-abyss);
+  color: var(--antique-bone);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ancient Stone & Mist Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(ellipse at 50% 15%, rgba(136, 19, 55, 0.18) 0%, transparent 70%),
+    radial-gradient(circle at 85% 85%, rgba(225, 29, 72, 0.08) 0%, transparent 50%),
+    radial-gradient(#1f1216 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-gothic), var(--font-body);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.font-cinzel { font-family: var(--font-gothic); }
+.font-decorative { font-family: var(--font-decorative); }
+.font-serif { font-family: var(--font-serif); }
+
+.text-gold { color: var(--mythic-gold); text-shadow: var(--glow-gold); }
+.text-ruby { color: var(--ruby-red); text-shadow: 0 0 12px rgba(225, 29, 72, 0.7); }
+.text-bone { color: var(--antique-bone); }
+
+/* ==========================================================================
+   RUBY METALLIC BUTTONS & GOTHIC CONTROLS
+   ========================================================================== */
+.gothic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-gothic);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.75rem 1.6rem;
+  background: linear-gradient(135deg, #a51d3d 0%, #630c24 50%, #3d0716 100%);
+  color: #fff;
+  border: 1px solid var(--ruby-red);
+  box-shadow: var(--glow-crimson), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.gothic-btn::before {
+  content: "❖";
+  font-size: 0.65rem;
+  color: var(--mythic-gold);
+}
+
+.gothic-btn::after {
+  content: "❖";
+  font-size: 0.65rem;
+  color: var(--mythic-gold);
+}
+
+.gothic-btn:hover {
+  background: linear-gradient(135deg, #e11d48 0%, #9f1239 50%, #4c0519 100%);
+  box-shadow: 0 0 30px rgba(225, 29, 72, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
+  border-color: #ffd6df;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.gothic-btn-gold {
+  background: linear-gradient(135deg, #d4af37 0%, #8c6d1d 50%, #4a380a 100%);
+  border-color: var(--mythic-gold);
+  color: #0d090a;
+  box-shadow: var(--glow-gold), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.gothic-btn-gold::before, .gothic-btn-gold::after {
+  color: #000;
+}
+.gothic-btn-gold:hover {
+  background: linear-gradient(135deg, #ffe07a 0%, #b38f28 50%, #684f11 100%);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+  color: #000;
+}
+
+.gothic-btn-sm {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   ORNATE STONE CARDS & CHAMBERS
+   ========================================================================== */
+.gothic-card {
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  padding: 1.8rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+/* Ornate Corner Accents */
+.gothic-card::before {
+  content: "✦";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  font-size: 0.9rem;
+  color: var(--mythic-gold);
+  text-shadow: var(--glow-gold);
+}
+
+.gothic-card::after {
+  content: "✦";
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  font-size: 0.9rem;
+  color: var(--mythic-gold);
+  text-shadow: var(--glow-gold);
+}
+
+.gothic-card:hover {
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 35px rgba(225, 29, 72, 0.45), inset 0 0 20px rgba(136, 19, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Gothic Wax Seal Badges */
+.gothic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-gothic);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  background: #1e1115;
+  border: 1px solid var(--crimson-blood);
+  color: var(--antique-bone);
+}
+
+.badge-crimson {
+  background: rgba(136, 19, 55, 0.4);
+  border-color: var(--ruby-red);
+  color: #ff94ab;
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.25);
+}
+
+.badge-gold {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--mythic-gold);
+  color: var(--mythic-gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+/* ==========================================================================
+   SPLASH SCREEN (Runic Summoning Invocation)
+   ========================================================================== */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #060405;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  overflow: hidden;
+}
+
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Background Gothic Summoning Circles */
+.gothic-summon-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(225, 29, 72, 0.3);
+  pointer-events: none;
+  animation: gothicRotate 35s linear infinite;
+}
+
+@keyframes gothicRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.splash-gothic-box {
+  position: relative;
+  z-index: 10;
+  max-width: 620px;
+  width: 100%;
+  background: rgba(18, 11, 14, 0.95);
+  border: 2px solid var(--crimson-blood);
+  box-shadow: 0 0 45px rgba(225, 29, 72, 0.5), inset 0 0 30px rgba(136, 19, 55, 0.5);
+  padding: 2.8rem 2.2rem;
+  text-align: center;
+}
+
+.splash-gothic-tag {
+  font-family: var(--font-gothic);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  color: var(--mythic-gold);
+  text-shadow: var(--glow-gold);
+  margin-bottom: 0.6rem;
+}
+
+.splash-gothic-title {
+  font-family: var(--font-decorative), var(--font-gothic);
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(225, 29, 72, 0.8);
+  letter-spacing: 3px;
+  margin-bottom: 0.4rem;
+}
+
+.splash-gothic-sub {
+  font-family: var(--font-gothic);
+  font-size: 0.95rem;
+  color: var(--ruby-red);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.splash-progress-stone {
+  width: 100%;
+  height: 18px;
+  background: #090607;
+  border: 1px solid var(--crimson-blood);
+  padding: 2px;
+  margin-bottom: 1.2rem;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.splash-progress-blood {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #881337, #e11d48);
+  box-shadow: 0 0 15px var(--ruby-red);
+  transition: width 0.08s linear;
+}
+
+.splash-rune-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-gothic);
+  font-size: 0.85rem;
+  color: var(--bone-dim);
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   TOP GOTHIC BANNER TICKER
+   ========================================================================== */
+.gothic-ticker {
+  width: 100%;
+  background: #080506;
+  border-bottom: 1px solid var(--crimson-blood);
+  color: var(--mythic-gold);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.45rem 0;
+  font-family: var(--font-gothic);
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 0 15px rgba(136, 19, 55, 0.3);
+}
+
+.gothic-ticker-inner {
+  display: inline-block;
+  animation: gothicTicker 32s linear infinite;
+}
+
+@keyframes gothicTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   GOTHIC HEADER & NAVIGATION
+   ========================================================================== */
+.gothic-header {
+  position: sticky;
+  top: 0;
+  background: rgba(13, 9, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--crimson-blood);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+}
+
+.nav-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gothic-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.gothic-brand-emblem {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #3d0716 0%, #170409 100%);
+  border: 1.5px solid var(--mythic-gold);
+  box-shadow: var(--glow-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mythic-gold);
+  font-family: var(--font-decorative);
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.gothic-brand-name {
+  font-family: var(--font-gothic);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.gothic-brand-sub {
+  font-family: var(--font-gothic);
+  font-size: 0.72rem;
+  color: var(--mythic-gold);
+  letter-spacing: 1.5px;
+}
+
+/* Nav Menu */
+.gothic-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.gothic-nav-item a {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.85rem;
+  color: var(--antique-bone);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.gothic-nav-item a:hover {
+  color: var(--mythic-gold);
+  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(136, 19, 55, 0.2);
+}
+
+.gothic-nav-item a.active {
+  color: #fff;
+  background: linear-gradient(135deg, #881337, #4c0519);
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 15px rgba(225, 29, 72, 0.5);
+  font-weight: 700;
+}
+
+.gothic-menu-toggle {
+  display: none;
+  background: #1b0e12;
+  border: 1px solid var(--crimson-blood);
+  color: var(--mythic-gold);
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   MAIN CONTENT WRAPPER & SECTIONS
+   ========================================================================== */
+.main-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem 1.5rem;
+  flex: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.gothic-section {
+  display: none;
+  animation: gothicFade 0.35s ease-out;
+}
+
+.gothic-section.active {
+  display: block;
+}
+
+@keyframes gothicFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Header Ornate Box */
+.gothic-section-hdr {
+  background: rgba(18, 11, 14, 0.95);
+  border-left: 5px solid var(--ruby-red);
+  border-top: 1px solid #4a1d27;
+  border-right: 1px solid #4a1d27;
+  border-bottom: 1px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  padding: 1.8rem 2.2rem;
+  margin-bottom: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.gothic-section-hdr::after {
+  content: "⚔️";
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  font-size: 1.8rem;
+  opacity: 0.2;
+}
+
+.gothic-section-title {
+  font-family: var(--font-gothic), var(--font-body);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.gothic-section-desc {
+  font-size: 0.92rem;
+  color: var(--bone-dim);
+  margin-top: 0.3rem;
+}
+
+/* ==========================================================================
+   HERO / GOTHIC PROFILE GRID
+   ========================================================================== */
+.gothic-hero-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.gothic-profile-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--crimson-blood);
+  box-shadow: var(--glow-crimson);
+  padding: 1.8rem;
+  text-align: center;
+  position: relative;
+}
+
+.gothic-avatar-wrap {
+  width: 100%;
+  max-width: 230px;
+  height: 270px;
+  margin: 0 auto 1.2rem;
+  border: 2px solid var(--mythic-gold);
+  box-shadow: var(--glow-crimson), 0 0 15px rgba(212, 175, 55, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+
+.gothic-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.1) brightness(0.95);
+  transition: transform 0.4s ease;
+}
+
+.gothic-avatar-wrap:hover img {
+  transform: scale(1.05);
+}
+
+.gothic-bio-card {
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gothic-quote-box {
+  background: rgba(136, 19, 55, 0.15);
+  border-left: 4px solid var(--ruby-red);
+  border-top: 1px solid #4a1d27;
+  border-right: 1px solid #4a1d27;
+  border-bottom: 1px solid #4a1d27;
+  padding: 1.2rem 1.4rem;
+  margin: 1.2rem 0;
+}
+
+.gothic-quote-box p {
+  font-family: var(--font-serif), var(--font-body);
+  font-style: italic;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Quick Nav Strip */
+.gothic-nav-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  background: rgba(18, 11, 14, 0.8);
+  border: 1px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+}
+
+.gothic-strip-btn {
+  background: rgba(136, 19, 55, 0.12);
+  border: 1px solid var(--crimson-blood);
+  color: var(--antique-bone);
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gothic-strip-btn:hover {
+  background: rgba(225, 29, 72, 0.25);
+  border-color: var(--ruby-red);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+}
+
+.gothic-strip-btn.active {
+  background: linear-gradient(135deg, #881337, #4c0519);
+  color: #fff;
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.6);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   TIMELINE (Chambers of History)
+   ========================================================================== */
+.gothic-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.gothic-timeline-node {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.gothic-timeline-node:hover {
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 25px rgba(225, 29, 72, 0.45);
+  transform: translateY(-2px);
+}
+
+.gothic-node-left {
+  background: rgba(136, 19, 55, 0.2);
+  border-right: 1.5px solid var(--crimson-blood);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.gothic-node-year {
+  font-family: var(--font-gothic);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--mythic-gold);
+  text-shadow: var(--glow-gold);
+}
+
+.gothic-node-right {
+  padding: 1.5rem 1.8rem;
+}
+
+/* ==========================================================================
+   DASHBOARD & METRICS
+   ========================================================================== */
+.gothic-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.gothic-metric-card {
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.gothic-metric-card:hover {
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 30px rgba(225, 29, 72, 0.5);
+  transform: translateY(-3px);
+}
+
+.gothic-metric-val {
+  font-family: var(--font-decorative), var(--font-gothic);
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ruby-red);
+  text-shadow: 0 0 20px rgba(225, 29, 72, 0.6);
+  margin-bottom: 0.3rem;
+}
+
+.gothic-metric-label {
+  font-size: 0.88rem;
+  color: var(--bone-dim);
+  font-weight: 600;
+}
+
+.gothic-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.gothic-chart-card {
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  padding: 1.8rem;
+}
+
+.gothic-chart-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid var(--crimson-blood);
+  padding-bottom: 0.8rem;
+}
+
+.gothic-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+/* ==========================================================================
+   CERTIFICATES GALLERY
+   ========================================================================== */
+.gothic-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.gothic-cert-card {
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gothic-cert-card:hover {
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 30px rgba(225, 29, 72, 0.55);
+  transform: translateY(-3px);
+}
+
+.gothic-cert-thumb {
+  height: 220px;
+  background: #090607;
+  border-bottom: 1px solid var(--crimson-blood);
+  position: relative;
+  overflow: hidden;
+}
+
+.gothic-cert-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.05);
+  transition: transform 0.4s ease;
+}
+
+.gothic-cert-card:hover .gothic-cert-thumb img {
+  transform: scale(1.06);
+}
+
+.gothic-cert-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 9, 10, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gothic-cert-card:hover .gothic-cert-overlay {
+  opacity: 1;
+}
+
+.gothic-cert-body {
+  padding: 1.2rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.gothic-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
+}
+
+.gothic-contact-item {
+  background: var(--bg-card);
+  border: 1.5px solid #4a1d27;
+  box-shadow: var(--glow-crimson);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.gothic-icon-box {
+  width: 50px;
+  height: 50px;
+  background: rgba(136, 19, 55, 0.25);
+  border: 1.5px solid var(--mythic-gold);
+  box-shadow: var(--glow-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  color: var(--mythic-gold);
+}
+
+/* Inputs */
+.gothic-form-input, .gothic-form-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.85rem 1rem;
+  background: rgba(10, 6, 8, 0.9);
+  border: 1.5px solid #4a1d27;
+  color: #fff;
+  outline: none;
+  transition: all 0.25s ease;
+  margin-top: 0.4rem;
+}
+
+.gothic-form-input:focus, .gothic-form-textarea:focus {
+  border-color: var(--ruby-red);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+  background: #140c0f;
+}
+
+/* ==========================================================================
+   MODAL / LIGHTBOX
+   ========================================================================== */
+.gothic-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 2, 3, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.gothic-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gothic-modal-dialog {
+  background: var(--bg-crypt);
+  border: 2px solid var(--crimson-blood);
+  box-shadow: 0 0 50px rgba(225, 29, 72, 0.5);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.gothic-modal-hdr {
+  background: rgba(136, 19, 55, 0.3);
+  border-bottom: 1.5px solid var(--crimson-blood);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gothic-modal-close {
+  background: transparent;
+  border: 1px solid var(--ruby-red);
+  color: var(--ruby-red);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gothic-modal-close:hover {
+  background: var(--ruby-red);
+  color: #fff;
+  box-shadow: var(--glow-ruby);
+}
+
+/* ==========================================================================
+   FOOTER (FLUID WIDTH & SPECIFIED REQUIREMENT)
+   Requirement: footer fluid width เติมสีพื้นหลัง เทาอ่อน 
+   ระบบเว็บส่วนบุคคล พัฒนาโดย [Champagne No.69]
+   ========================================================================== */
+.gothic-footer-fluid {
+  width: 100%;
+  background-color: #E2E8F0; /* Specified light gray */
+  color: #1E293B; /* Dark contrast for light gray background */
+  border-top: 3px solid #000000;
+  box-shadow: 0 -4px 25px rgba(136, 19, 55, 0.35);
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  z-index: 50;
+}
+
+.gothic-footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.gothic-footer-tag {
+  background: #1E293B;
+  color: var(--mythic-gold);
+  font-family: var(--font-gothic);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.3rem 0.9rem;
+  letter-spacing: 2px;
+}
+
+.gothic-footer-main {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.gothic-footer-highlight {
+  display: inline-block;
+  background: #000;
+  color: var(--ruby-red);
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-gothic);
+  font-weight: 900;
+  border: 1px solid var(--ruby-red);
+  box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+  margin: 0 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .gothic-hero-grid { grid-template-columns: 1fr; }
+  .gothic-charts-grid { grid-template-columns: 1fr; }
+  .gothic-contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .gothic-menu-toggle { display: block; }
+  .gothic-nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #140d10;
+    border-bottom: 2px solid var(--crimson-blood);
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .gothic-nav-list.mobile-open { display: flex; }
+  .gothic-timeline-node { grid-template-columns: 1fr; }
+  .gothic-node-left { border-right: none; border-bottom: 1px solid var(--crimson-blood); }
+}
