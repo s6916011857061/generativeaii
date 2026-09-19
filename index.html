@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NATTAWUT SUKKIJPAGORN | Portfolio & Performance Report</title>
+  <!-- Google Fonts: Space Grotesk & Prompt & Archivo Black -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN for Interactive Dashboard -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom Neobrutalism Stylesheet -->
+  <link rel="stylesheet" href="./css/neobrutalism.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       SPLASH SCREEN (เฉพาะตอนเข้าหน้าเว็บครั้งแรกและรีเฟรชหน้าจอ)
+       ===================================================================== -->
+  <div id="splash-screen">
+    <!-- Background Neobrutalist Decorations -->
+    <div class="splash-bg-decor decor-star" style="top: 8%; left: 8%;"></div>
+    <div class="splash-bg-decor decor-circle" style="bottom: 12%; right: 8%;"></div>
+    <div class="splash-bg-decor decor-cross" style="top: 15%; right: 18%;">✕</div>
+    <div class="splash-bg-decor decor-cross" style="bottom: 20%; left: 15%;">✕</div>
+
+    <div class="splash-content">
+      <div class="splash-tag">★ PERSONAL PERFORMANCE REPORT ★</div>
+      <h1 class="splash-title">NATTAWUT SUKKIJPAGORN</h1>
+      <div class="splash-subtitle">ACCOUNTING SUPERVISOR • SCG</div>
+
+      <div class="splash-progress-container">
+        <div id="splash-progress-bar" class="splash-progress-bar"></div>
+      </div>
+
+      <div class="splash-status">
+        <span id="splash-status-message">กำลังเตรียมข้อมูลรายงานผลงาน...</span>
+        <span id="splash-progress-text">0%</span>
+      </div>
+
+      <button id="splash-enter-btn" class="neo-btn neo-btn-coral" style="display: none; width: 100%;">
+        เข้าสู่ระบบรายงานผลงาน (ENTER) →
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       TOP TICKER MARQUEE (Neobrutalism Style)
+       ===================================================================== -->
+  <div class="neo-ticker-wrap">
+    <div class="neo-ticker-content">
+      ★ NATTAWUT SUKKIJPAGORN • ACCOUNTING SUPERVISOR (SCG) ★ 17+ YEARS EXPERIENCE ★ ERP TRANSFORMATION: SAP ECC 6.0 & FOCUS ONE ★ CERTIFIED RPA PROFESSIONAL ★ MASTER DEGREE IN HRD & INDUSTRIAL BUSINESS ★ SCG SHARED SERVICES ★ AUDIT FOUNDATION (KPMG) ★ PASSION FOR BUSINESS & PEOPLE DEVELOPMENT ★
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       HEADER & NAVIGATION BAR
+       ===================================================================== -->
+  <header class="neo-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" onclick="location.reload(); return false;">
+        <span class="brand-badge">NS</span>
+        <div class="brand-text">
+          <span class="brand-name">NATTAWUT.S</span>
+          <span class="brand-role">SCG Accounting Supervisor</span>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <!-- Main Navigation Menu (เอาตัวเลขหน้าหัวข้อออก) -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="#sec-education" class="nav-link" data-target="sec-education">ประวัติการศึกษา</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-student-activities" class="nav-link" data-target="sec-student-activities">ประวัติกิจกรรมระหว่างศึกษา</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-career" class="nav-link" data-target="sec-career">ประวัติการทำงาน</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-outstanding" class="nav-link" data-target="sec-outstanding">ผลการทำงานโดดเด่น</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-work-activities" class="nav-link" data-target="sec-work-activities">กิจกรรมระหว่างทำงาน</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-dashboard" class="nav-link active" data-target="sec-dashboard">Dashboard รายงานผลงาน</a>
+        </li>
+        <li class="nav-item">
+          <a href="#sec-contact" class="nav-link" data-target="sec-contact">ช่องทางติดต่อ</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN CONTENT CONTAINER
+       ===================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- HERO PROFILE CARD (Overview) -->
+    <section class="hero-grid">
+      <div class="hero-profile-card">
+        <div class="hero-avatar-wrap">
+          <img src="./assets/images/profile.png" alt="Nattawut Sukkijpagorn" />
+        </div>
+        <h2 style="font-size: 1.4rem; font-weight: 900; margin-bottom: 0.3rem;">ณัฐวุฒิ สุขกิจภากรณ์</h2>
+        <div style="font-size: 0.95rem; font-weight: 700; color: #555; margin-bottom: 1.2rem;">
+          Nattawut Sukkijpagorn
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+          <span class="neo-badge badge-yellow">SCG Accounting Supervisor</span>
+          <span class="neo-badge badge-blue">ERP Transformation Lead</span>
+          <span class="neo-badge badge-coral">Automation & RPA Pro</span>
+        </div>
+        <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 0.5rem;">
+          <button id="view-all-slides-btn" class="neo-btn neo-btn-sm neo-btn-white" title="เปิดดูสไลด์ทั้งหมด 13 หน้า">
+            📄 ดูเอกสารสไลด์ตัวเต็ม (13 หน้า)
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-bio-card">
+        <div>
+          <div class="hero-badges-row">
+            <span class="neo-badge badge-green">● 17+ YEARS EXPERIENCE</span>
+            <span class="neo-badge badge-purple">CORPORATE ACCOUNTING OFFICE</span>
+            <span class="neo-badge badge-yellow">KMUTNB MASTER'S CANDIDATE</span>
+          </div>
+
+          <h1 class="hero-name">PROFESSIONAL PROFILE</h1>
+          <div class="hero-role-tag">
+            ACCOUNTING SUPERVISOR • ERP TRANSFORMATION • SHARED SERVICE
+          </div>
+
+          <div class="hero-quote-box">
+            <p>
+              "ความสำเร็จของงานไม่ได้เกิดจากความถูกต้องของตัวเลขเพียงอย่างเดียว แต่เกิดจากการทำงานร่วมกันของคน กระบวนการ ระบบ เทคโนโลยี และการเปลี่ยนแปลงขององค์กร"
+            </p>
+          </div>
+
+          <p style="margin-bottom: 1.2rem; font-size: 0.98rem;">
+            เติบโตจากสายงาน <strong>Audit (KPMG)</strong> และ <strong>Accounting Operations</strong> ผ่านงาน Order to Cash, General Accounting, Overseas Accounting และ Costing ก่อนก้าวสู่งาน <strong>ERP Transformation</strong> และ <strong>Project Coordination</strong> ปัจจุบันดำรงตำแหน่ง Accounting Supervisor ณ สำนักงานบัญชีกลาง บริษัท ปูนซิเมนต์ไทย จำกัด (มหาชน) (SCG)
+          </p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; border-top: 2px dashed #000; padding-top: 1.2rem;">
+          <a href="#sec-contact" class="neo-btn neo-btn-yellow quick-nav-btn" data-target="sec-contact">
+            📞 ช่องทางติดต่อด่วน
+          </a>
+          <button id="download-vcard-btn" class="neo-btn neo-btn-blue">
+            💾 บันทึกนามบัตร (vCard)
+          </button>
+          <a href="#sec-outstanding" class="neo-btn neo-btn-coral quick-nav-btn" data-target="sec-outstanding">
+            🏆 ดูผลงานโดดเด่น
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SECTION SWITCHER STRIP (เอาตัวเลขหน้าหัวข้อออก) -->
+    <div class="quick-nav-strip">
+      <span style="font-weight: 900; font-family: var(--font-en); display: flex; align-items: center; gap: 0.3rem;">
+        ⚡ เมนูนำทาง:
+      </span>
+      <button class="quick-nav-btn" data-target="sec-education">ประวัติการศึกษา</button>
+      <button class="quick-nav-btn" data-target="sec-student-activities">ประวัติกิจกรรมระหว่างศึกษา</button>
+      <button class="quick-nav-btn" data-target="sec-career">ประวัติการทำงาน</button>
+      <button class="quick-nav-btn" data-target="sec-outstanding">ผลการทำงานโดดเด่น</button>
+      <button class="quick-nav-btn" data-target="sec-work-activities">กิจกรรมระหว่างทำงาน</button>
+      <button class="quick-nav-btn active" data-target="sec-dashboard">Dashboard รายงานผลงาน</button>
+      <button class="quick-nav-btn" data-target="sec-contact">ช่องทางติดต่อ</button>
+    </div>
+
+    <!-- ===================================================================
+         MENU: ประวัติการศึกษา (Education Journey)
+         =================================================================== -->
+    <section id="sec-education" class="portfolio-section">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-purple">ACADEMIC BACKGROUND</span>
+          <h2 class="section-title">ประวัติการศึกษา (EDUCATION JOURNEY)</h2>
+          <p class="section-subtitle">รากฐานการศึกษาตั้งแต่วิทยาศาสตร์-คณิตศาสตร์ สู่การบัญชี และการพัฒนาทรัพยากรมนุษย์ระดับปริญญาโท</p>
+        </div>
+      </div>
+
+      <div class="timeline-list">
+        <!-- KMUTNB (Master's Degree) -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-purple);">
+            <div class="timeline-year">2026–ปัจจุบัน</div>
+            <span class="neo-badge badge-white neo-pill" style="margin-top: 0.5rem;">Current Study</span>
+          </div>
+          <div class="timeline-content-col">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 class="timeline-title">มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (KMUTNB)</h3>
+              <span class="neo-badge badge-yellow">ปริญญาโท</span>
+            </div>
+            <div class="timeline-company">Master’s Degree - Industrial Business and Human Resource Development</div>
+            <p class="timeline-desc">
+              ศึกษาต่อยอดด้านธุรกิจอุตสาหกรรมและการพัฒนาทรัพยากรมนุษย์ เพื่อเชื่อมโยงประสบการณ์วิชาชีพบัญชีกว่า 17 ปี เข้ากับมิติมุมมองทางธุรกิจและการพัฒนาบุคลากรในยุคดิจิทัล
+            </p>
+          </div>
+        </div>
+
+        <!-- Kasetsart University (Bachelor) -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-green);">
+            <div class="timeline-year">2005–2009</div>
+            <span class="neo-badge badge-white neo-pill" style="margin-top: 0.5rem;">GPA 2.71</span>
+          </div>
+          <div class="timeline-content-col">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 class="timeline-title">มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)</h3>
+              <span class="neo-badge badge-green">ปริญญาตรี</span>
+            </div>
+            <div class="timeline-company">คณะบริหารธุรกิจ สาขาวิชาการบัญชี (Bachelor of Accountancy)</div>
+            <p class="timeline-desc">
+              สำเร็จการศึกษาหลักสูตรบัญชีบัณฑิต พร้อมการทำกิจกรรมผู้นำนิสิตอย่างเข้มข้น ประธานรุ่นนิสิตบัญชีปี 1 และรางวัลนิสิตกิจกรรมนอกหลักสูตรดีเด่น
+            </p>
+          </div>
+        </div>
+
+        <!-- Triamudomsuksa School -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-blue); color: #fff;">
+            <div class="timeline-year" style="color: #fff;">2002–2004</div>
+            <span class="neo-badge badge-white neo-pill" style="margin-top: 0.5rem;">GPA 3.29</span>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">โรงเรียนเตรียมอุดมศึกษา (Triamudomsuksa School)</h3>
+            <div class="timeline-company">แผนการเรียนวิทยาศาสตร์–คณิตศาสตร์–การจัดการ (Science–Math–Management)</div>
+            <p class="timeline-desc">
+              ปูพื้นฐานการคิดเชิงตรรกะ การคำนวณ และการจัดการองค์ความรู้ในสถาบันชั้นนำของประเทศ
+            </p>
+          </div>
+        </div>
+
+        <!-- Wat Bowonniwet School -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-yellow);">
+            <div class="timeline-year">1999–2001</div>
+            <span class="neo-badge badge-white neo-pill" style="margin-top: 0.5rem;">GPA 3.89</span>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">โรงเรียนวัดบวรนิเวศ (Wat Bowonniwet School)</h3>
+            <div class="timeline-company">มัธยมศึกษาตอนต้น สายวิทยาศาสตร์–คณิตศาสตร์ (Science–Math)</div>
+            <p class="timeline-desc">
+              สำเร็จการศึกษาระดับมัธยมศึกษาตอนต้นด้วยผลการเรียนยอดเยี่ยม GPA 3.89
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Perspective Highlight Card -->
+      <div class="neo-card neo-card-cream" style="margin-top: 2rem; border-left: 8px solid var(--color-purple);">
+        <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span>💡</span> มุมมองจากการเรียน (LEARNING PERSPECTIVE)
+        </h3>
+        <ul style="list-style: square; padding-left: 1.5rem; line-height: 1.8; font-weight: 500;">
+          <li>เส้นทางการเรียนรู้เริ่มต้นจากรากฐานด้าน <strong>บัญชี</strong> แล้วขยายตัวผ่านประสบการณ์การทำงานจริงสู่ <strong>กระบวนการธุรกิจ (Business Processes), เทคโนโลยีสารสนเทศ (Technology) และการพัฒนาคน (People Development)</strong></li>
+          <li>การศึกษาระดับปริญญาโทในปัจจุบัน คือการเปิดบทใหม่: เชื่อมโยงประสบการณ์ระดับมืออาชีพเข้ากับมุมมองทางธุรกิจและการบริหารทรัพยากรมนุษย์ที่กว้างขวางและลึกซึ้งยิ่งขึ้น</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MENU: ประวัติกิจกรรมระหว่างศึกษา (Student Activities & Leadership)
+         =================================================================== -->
+    <section id="sec-student-activities" class="portfolio-section">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-green">LEADERSHIP & ENGAGEMENT</span>
+          <h2 class="section-title">ประวัติกิจกรรมระหว่างศึกษาและภาวะผู้นำ</h2>
+          <p class="section-subtitle">บทบาทการเป็นผู้นำกิจกรรมค่ายอาสา ชมรมเชียร์ และรางวัลเกียรติยศแห่งความภาคภูมิใจ</p>
+        </div>
+      </div>
+
+      <!-- Awards Showcase -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="neo-card" style="background: var(--color-yellow); border-left: 8px solid #000;">
+          <div style="font-size: 2rem; margin-bottom: 0.4rem;">🏆</div>
+          <span class="neo-badge badge-white">AWARDS & RECOGNITION 2007</span>
+          <h3 style="font-size: 1.3rem; font-weight: 900; margin-top: 0.6rem; line-height: 1.2;">
+            Outstanding Student in Extracurricular Activities
+          </h3>
+          <p style="font-size: 0.95rem; margin-top: 0.4rem; font-weight: 600;">
+            รางวัลนิสิตผู้มีผลงานกิจกรรมนอกหลักสูตรดีเด่น มหาวิทยาลัยเกษตรศาสตร์ (2007)
+          </p>
+        </div>
+
+        <div class="neo-card" style="background: var(--color-coral); color: #fff; border-left: 8px solid #000;">
+          <div style="font-size: 2rem; margin-bottom: 0.4rem;">🎖️</div>
+          <span class="neo-badge badge-white">AWARDS & RECOGNITION 2009</span>
+          <h3 style="font-size: 1.3rem; font-weight: 900; margin-top: 0.6rem; line-height: 1.2; color: #fff;">
+            1st Award — Friends Admired Man
+          </h3>
+          <p style="font-size: 0.95rem; margin-top: 0.4rem; font-weight: 600; color: #FFE15D;">
+            รางวัลชนะเลิศ Friends Admired Man of Accounting Student Club, มหาวิทยาลัยเกษตรศาสตร์ (2009)
+          </p>
+        </div>
+      </div>
+
+      <!-- Activities Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem;">
+        <div class="neo-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-yellow">YEAR 2005</span>
+            <span style="font-size: 1.3rem;">👨‍💼</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 0.4rem;">
+            President — 1st-year Accounting Student Club
+          </h4>
+          <p style="font-size: 0.95rem; color: #444;">
+            ประธานรุ่นนิสิตบัญชี ชั้นปีที่ 1 คณะบริหารธุรกิจ มหาวิทยาลัยเกษตรศาสตร์ ผู้นำการประสานงานและจัดกิจกรรมรุ่น
+          </p>
+        </div>
+
+        <div class="neo-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-blue">YEAR 2007</span>
+            <span style="font-size: 1.3rem;">📣</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 0.4rem;">
+            Vice-President — Kasetsart Cheer Club
+          </h4>
+          <p style="font-size: 0.95rem; color: #444;">
+            รองประธานชมรมเชียร์ มหาวิทยาลัยเกษตรศาสตร์ และ Head — Bus Cheer 2nd Team ควบคุมดูแลการเชียร์และประสานทีมงาน
+          </p>
+        </div>
+
+        <div class="neo-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-coral">YEAR 2008</span>
+            <span style="font-size: 1.3rem;">🏕️</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 0.4rem;">
+            Head — 15th Accounting Camp (Chaiyaphum)
+          </h4>
+          <p style="font-size: 0.95rem; color: #444;">
+            หัวหน้าค่ายบัญชีชนบท ครั้งที่ 15 (Rural Development Camp) ณ จังหวัดชัยภูมิ ดูแลการสร้างอาคารและส่งเสริมเยาวชน
+          </p>
+        </div>
+
+        <div class="neo-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-green">YEAR 2007</span>
+            <span style="font-size: 1.3rem;">🤝</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 0.4rem;">
+            Assistant Head — 14th Accounting Camp (Sukhothai)
+          </h4>
+          <p style="font-size: 0.95rem; color: #444;">
+            ผู้ช่วยหัวหน้าค่ายบัญชีชนบท ครั้งที่ 14 ณ จังหวัดสุโขทัย วางแผนโลจิสติกส์และกิจกรรมค่าย
+          </p>
+        </div>
+
+        <div class="neo-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-purple">SPECIAL PROJECTS</span>
+            <span style="font-size: 1.3rem;">📚</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 0.4rem;">
+            Head of Pre Accounting Camp & Year Book
+          </h4>
+          <p style="font-size: 0.95rem; color: #444;">
+            Head — 15th Pre Accounting Camp, Head — Accounting Trip และ Head — Accounting Student Club Year Book Project
+          </p>
+        </div>
+
+        <div class="neo-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-yellow">DEVELOPMENT</span>
+            <span style="font-size: 1.3rem;">🌟</span>
+          </div>
+          <h4 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 0.4rem;">
+            Leadership & Business Camps Participant
+          </h4>
+          <p style="font-size: 0.95rem; color: #444;">
+            ผู้จัดและผู้เข้าร่วม Accounting Seminars, Leadership Development Training Programs และ Business Camp พัฒนาบุคลิกภาพ
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MENU: ประวัติการทำงาน (Career Timeline & Professional Experience)
+         =================================================================== -->
+    <section id="sec-career" class="portfolio-section">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-coral">17+ YEARS EXPERIENCE</span>
+          <h2 class="section-title">ประวัติการทำงานและเส้นทางวิชาชีพ (CAREER TIMELINE)</h2>
+          <p class="section-subtitle">โครงสร้างประสบการณ์: Position → Office → Process → Sub-Process → BU</p>
+        </div>
+      </div>
+
+      <!-- Career Arc Summary Box -->
+      <div class="neo-card neo-card-yellow" style="margin-bottom: 2rem; border-left: 8px solid #000;">
+        <h3 style="font-size: 1.2rem; font-weight: 900; margin-bottom: 0.5rem;">
+          📈 เส้นทางการเติบโต (CAREER ARC)
+        </h3>
+        <p style="font-weight: 700; font-size: 1.05rem;">
+          Audit Foundation (KPMG) ➔ Accounting Operations ➔ Senior Accountant ➔ Project Key User / Project Co-ordinator ➔ Accounting Supervisor (SCG)
+        </p>
+      </div>
+
+      <!-- Detailed Experience Cards -->
+      <div class="timeline-list">
+        <!-- 2024 - Present -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-coral); color: #fff;">
+            <div class="timeline-year" style="color: #fff;">2024–ปัจจุบัน</div>
+            <span class="neo-badge badge-white neo-pill" style="margin-top: 0.4rem;">Current Role</span>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Accounting Supervisor</h3>
+            <div class="timeline-company">สำนักงานบัญชีกลาง บริษัท ปูนซิเมนต์ไทย จำกัด (มหาชน) (Corporate Accounting Office, SCG)</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-yellow">Process: Financial and Accounting Operations</span>
+              <span class="neo-badge badge-blue">Sub-Process: Retail & Non-SAP Accounting</span>
+              <span class="neo-badge badge-green">BU: SCG Cement and Green Solutions; SCGC</span>
+            </div>
+            <p class="timeline-desc">
+              กำกับดูแลงานบัญชีค้าปลีกและระบบบัญชีนอก SAP รวมทั้งขับเคลื่อนโครงการ ERP ใหม่เพื่อรองรับการเติบโตของกลุ่มธุรกิจ Cement and Green Solutions และ SCG Chemicals
+            </p>
+          </div>
+        </div>
+
+        <!-- 2020 - 2024 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-yellow);">
+            <div class="timeline-year">2020–2024</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Senior Accountant / Project Co-ordinator</h3>
+            <div class="timeline-company">Corporate Accounting Office, SCG</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-blue">Order to Cash & GA</span>
+              <span class="neo-badge badge-coral">Intercompany</span>
+              <span class="neo-badge badge-purple">BIC Transformation Project</span>
+            </div>
+            <p class="timeline-desc">
+              ดูแลกระบวนการ Order to Cash และงานบัญชีทั่วไป (General Accounting) ระหว่างบริษัทในเครือ (Intercompany) ของกลุ่ม Cement-Building Materials และรับบทบาท Project Co-ordinator ในโครงการ CAD-CBM Transformation
+            </p>
+          </div>
+        </div>
+
+        <!-- 2018 - 2019 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-green);">
+            <div class="timeline-year">2018–2019</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Senior Accountant</h3>
+            <div class="timeline-company">Corporate Accounting Office, SCG</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-yellow">General Accounting</span>
+              <span class="neo-badge badge-blue">BU: SCG Cement-Building Materials</span>
+            </div>
+            <p class="timeline-desc">
+              บริหารและปิดบัญชีทั่วไป กระบวนการบัญชีระหว่างกัน การตรวจสอบความถูกต้องและจัดทำรายงานทางการเงินตามมาตรฐาน
+            </p>
+          </div>
+        </div>
+
+        <!-- 2016 - 2018 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-blue); color: #fff;">
+            <div class="timeline-year" style="color: #fff;">2016–2018</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Senior Accountant (Overseas Accounting Services)</h3>
+            <div class="timeline-company">Corporate Accounting Office, SCG</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-white">Process: Overseas Accounting Services</span>
+              <span class="neo-badge badge-yellow">Sub-Process: Operation Hub / General Ledger</span>
+            </div>
+            <p class="timeline-desc">
+              ดูแลงานบัญชีต่างประเทศของ SCG ในฐานะ Operation Hub และบริหารบัญชีแยกประเภททั่วไป (General Ledger) ให้แก่ธุรกิจในเครือข่ายต่างประเทศ
+            </p>
+          </div>
+        </div>
+
+        <!-- 2014 - 2015 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-purple);">
+            <div class="timeline-year">2014–2015</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Project Key User (SAP ECC 6.0 Project)</h3>
+            <div class="timeline-company">Corporate Accounting Office, SCG</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-coral">ERP Migration</span>
+              <span class="neo-badge badge-yellow">SCG Cement-Building Materials & SCG Packaging</span>
+            </div>
+            <p class="timeline-desc">
+              เป็น Key User หลักในการทดสอบ ออกแบบ และประสานงานการ Migrate ระบบบัญชีสู่ SAP ECC 6.0 ให้ครอบคลุมสองกลุ่มธุรกิจใหญ่
+            </p>
+          </div>
+        </div>
+
+        <!-- 2013 - 2014 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-yellow);">
+            <div class="timeline-year">2013–2014</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Accountant → Senior Accountant</h3>
+            <div class="timeline-company">Corporate Accounting Office, SCG</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-blue">Order to Cash</span>
+              <span class="neo-badge badge-green">Billing & Collection</span>
+              <span class="neo-badge badge-purple">SCG Trading & Chemicals</span>
+            </div>
+            <p class="timeline-desc">
+              ปฏิบัติการบัญชีด้านการวางบิล รับชำระเงิน และการบริหารสภาพคล่องทางการเงินให้แก่กลุ่ม SCG Trading และ SCG Chemicals
+            </p>
+          </div>
+        </div>
+
+        <!-- 2010 - 2012 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: var(--color-green);">
+            <div class="timeline-year">2010–2012</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Accountant (Costing Process)</h3>
+            <div class="timeline-company">SCG Accounting Services Co., Ltd.</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-yellow">Accounting Information Management</span>
+              <span class="neo-badge badge-blue">Costing / SCG Paper</span>
+            </div>
+            <p class="timeline-desc">
+              บริหารจัดการข้อมูลต้นทุนการผลิต (Costing) การวิเคราะห์ข้อมูลต้นทุนและประสิทธิภาพการดำเนินงานของกลุ่ม SCG Paper
+            </p>
+          </div>
+        </div>
+
+        <!-- 2009 - 2010 -->
+        <div class="timeline-card">
+          <div class="timeline-year-col" style="background: #E2E8F0;">
+            <div class="timeline-year">2009–2010</div>
+          </div>
+          <div class="timeline-content-col">
+            <h3 class="timeline-title">Audit Assistant</h3>
+            <div class="timeline-company">KPMG Phoomchai Audit Co., Ltd. (Big 4 Audit Firm)</div>
+            <div style="margin: 0.6rem 0; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="neo-badge badge-coral">Financial Audit</span>
+              <span class="neo-badge badge-yellow">Information, Communication and Entertainment (ICE)</span>
+            </div>
+            <p class="timeline-desc">
+              จุดเริ่มต้นวิชาชีพในบริษัทตรวจสอบบัญชีระดับโลก ตรวจสอบงบการเงินและระบบการควบคุมภายในของบริษัทจดทะเบียนในกลุ่มอุตสาหกรรมโทรคมนาคมและสื่อ
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MENU: ผลการทำงานโดดเด่น (Outstanding Achievements & Projects)
+         =================================================================== -->
+    <section id="sec-outstanding" class="portfolio-section">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-yellow">MAJOR MILESTONES</span>
+          <h2 class="section-title">ผลการทำงานโดดเด่น (OUTSTANDING ACHIEVEMENTS)</h2>
+          <p class="section-subtitle">เมกะโปรเจกต์ ERP Transformation และแกลเลอรีใบรับรองวิชาชีพสากล</p>
+        </div>
+      </div>
+
+      <!-- Key Projects Showcase Cards -->
+      <h3 style="font-size: 1.4rem; font-weight: 900; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;">
+        🚀 เมกะโปรเจกต์สำคัญ (KEY PROJECTS)
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; margin-bottom: 3rem;">
+        <!-- Mafuang Project -->
+        <div class="neo-card" style="border-top: 8px solid var(--color-coral);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-coral">2022 – PRESENT</span>
+            <span class="neo-badge badge-yellow">LATEST ERP</span>
+          </div>
+          <h4 style="font-size: 1.35rem; font-weight: 900; line-height: 1.2; margin-bottom: 0.4rem;">
+            Mafuang Project (New ERP: Focus One)
+          </h4>
+          <div style="font-weight: 700; color: var(--color-blue); margin-bottom: 0.8rem;">
+            Role: Project Key User (SCG-CGS)
+          </div>
+          <p style="font-size: 0.95rem; color: #333; line-height: 1.6;">
+            นำการติดตั้งและปรับใช้ระบบ New ERP "Focus One" ให้แก่กลุ่ม SCG Cement and Green Solutions ครอบคลุมระบบงานค้าปลีก ระบบบัญชี และการเชื่อมโยงระบบ Non-SAP
+          </p>
+        </div>
+
+        <!-- BIC Project -->
+        <div class="neo-card" style="border-top: 8px solid var(--color-blue);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-blue">2020 – 2022</span>
+            <span class="neo-badge badge-purple">TRANSFORMATION</span>
+          </div>
+          <h4 style="font-size: 1.35rem; font-weight: 900; line-height: 1.2; margin-bottom: 0.4rem;">
+            BIC Project (CAD - CBM Transformation)
+          </h4>
+          <div style="font-weight: 700; color: var(--color-blue); margin-bottom: 0.8rem;">
+            Role: Project Co-ordinator
+          </div>
+          <p style="font-size: 0.95rem; color: #333; line-height: 1.6;">
+            ประสานงานโครงการปรับเปลี่ยนและเพิ่มประสิทธิภาพโครงสร้างงานบัญชีระหว่าง Corporate Accounting Department (CAD) และกลุ่ม Cement-Building Materials (CBM)
+          </p>
+        </div>
+
+        <!-- SAP ECC 6.0 Project -->
+        <div class="neo-card" style="border-top: 8px solid var(--color-yellow);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+            <span class="neo-badge badge-yellow">2014 – 2015</span>
+            <span class="neo-badge badge-green">CORE ERP</span>
+          </div>
+          <h4 style="font-size: 1.35rem; font-weight: 900; line-height: 1.2; margin-bottom: 0.4rem;">
+            SAP ECC 6.0 Project (ERP Migration)
+          </h4>
+          <div style="font-weight: 700; color: var(--color-blue); margin-bottom: 0.8rem;">
+            Role: Project Key User
+          </div>
+          <p style="font-size: 0.95rem; color: #333; line-height: 1.6;">
+            ขับเคลื่อนการย้ายฐานข้อมูลและกระบวนการบัญชีสู่ SAP ECC 6.0 สำหรับ 2 ธุรกิจยักษ์ใหญ่ SCG Cement-Building Materials และ SCG Packaging
+          </p>
+        </div>
+      </div>
+
+      <!-- Certifications Gallery with Modal Lightbox Trigger -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.8rem;">
+        <h3 style="font-size: 1.4rem; font-weight: 900;">
+          📜 ใบรับรองสำคัญ (SELECTED CERTIFICATIONS)
+        </h3>
+        <span style="font-size: 0.88rem; font-weight: 700; color: #666;">
+          * คลิกที่การ์ดเพื่อดูภาพใบรับรองฉบับสมบูรณ์
+        </span>
+      </div>
+
+      <div class="cert-grid">
+        <!-- Cert 1: RPA -->
+        <div class="cert-card" data-img="./assets/images/cert_rpa.png" data-title="Automation Anywhere Certified Advanced RPA Professional" data-issuer="Automation Anywhere" data-year="2020">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_rpa.png" alt="Automation Anywhere RPA" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">Automation Anywhere</div>
+              <h4 class="cert-name">Advanced RPA Professional (V11.0)</h4>
+            </div>
+            <span class="neo-badge badge-yellow cert-year-tag">YEAR 2020</span>
+          </div>
+        </div>
+
+        <!-- Cert 2: Accenture AI -->
+        <div class="cert-card" data-img="./assets/images/cert_accenture_ai.png" data-title="Digital Skills: Artificial Intelligence" data-issuer="Accenture / FutureLearn" data-year="2021">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_accenture_ai.png" alt="Accenture AI" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">Accenture & FutureLearn</div>
+              <h4 class="cert-name">Digital Skills: Artificial Intelligence</h4>
+            </div>
+            <span class="neo-badge badge-blue cert-year-tag">YEAR 2021</span>
+          </div>
+        </div>
+
+        <!-- Cert 3: Accenture Work & Life -->
+        <div class="cert-card" data-img="./assets/images/cert_accenture_work.png" data-title="Digital Skills for Work and Life" data-issuer="Accenture / FutureLearn" data-year="2021">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_accenture_work.png" alt="Accenture Digital Skills" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">Accenture & FutureLearn</div>
+              <h4 class="cert-name">Digital Skills for Work and Life</h4>
+            </div>
+            <span class="neo-badge badge-blue cert-year-tag">YEAR 2021</span>
+          </div>
+        </div>
+
+        <!-- Cert 4: TDGA Security Awareness -->
+        <div class="cert-card" data-img="./assets/images/cert_tdga_sec.png" data-title="Security Awareness Certification" data-issuer="Thailand Digital Government Academy (TDGA)" data-year="2019">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_tdga_sec.png" alt="TDGA Security" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">สถาบัน TDGA (DGA)</div>
+              <h4 class="cert-name">Security Awareness (ความมั่นคงปลอดภัยไซเบอร์)</h4>
+            </div>
+            <span class="neo-badge badge-coral cert-year-tag">YEAR 2019</span>
+          </div>
+        </div>
+
+        <!-- Cert 5: TDGA Project Management -->
+        <div class="cert-card" data-img="./assets/images/cert_tdga_pm.png" data-title="Project Management Certification" data-issuer="Thailand Digital Government Academy (TDGA)" data-year="2018">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_tdga_pm.png" alt="TDGA Project Management" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">สถาบัน TDGA (DGA)</div>
+              <h4 class="cert-name">Project Management (การบริหารโครงการ)</h4>
+            </div>
+            <span class="neo-badge badge-green cert-year-tag">YEAR 2018</span>
+          </div>
+        </div>
+
+        <!-- Cert 6: LinkedIn Building Resilience -->
+        <div class="cert-card" data-img="./assets/images/cert_linkedin_resilience.png" data-title="Building Resilience" data-issuer="LinkedIn Learning (NASBA CPE)" data-year="2020">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_linkedin_resilience.png" alt="LinkedIn Resilience" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">LinkedIn Learning (NASBA)</div>
+              <h4 class="cert-name">Building Resilience & Agile Mindset</h4>
+            </div>
+            <span class="neo-badge badge-purple cert-year-tag">YEAR 2020</span>
+          </div>
+        </div>
+
+        <!-- Cert 7: Chula MOOC -->
+        <div class="cert-card" data-img="./assets/images/cert_chula_mooc.png" data-title="ทรัพย์สินทางปัญญากับธุรกิจและการพัฒนานวัตกรรม" data-issuer="Chulalongkorn University (Chula MOOC)" data-year="2021">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_chula_mooc.png" alt="Chula MOOC" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">Chula MOOC (จุฬาลงกรณ์ฯ)</div>
+              <h4 class="cert-name">ทรัพย์สินทางปัญญากับธุรกิจและนวัตกรรม</h4>
+            </div>
+            <span class="neo-badge badge-coral cert-year-tag">YEAR 2021</span>
+          </div>
+        </div>
+
+        <!-- Cert 8: Department of Skill Development -->
+        <div class="cert-card" data-img="./assets/images/cert_dsd_digital.png" data-title="เทคนิคการเพิ่มประสิทธิภาพ Microsoft Digital Literacy" data-issuer="กรมพัฒนาฝีมือแรงงาน กระทรวงแรงงาน" data-year="2022">
+          <div class="cert-thumb-wrap">
+            <img src="./assets/images/cert_dsd_digital.png" alt="Microsoft Digital Literacy" />
+            <div class="cert-overlay"><span class="neo-btn neo-btn-sm neo-btn-yellow">🔍 ดูภาพขยาย</span></div>
+          </div>
+          <div class="cert-body">
+            <div>
+              <div class="cert-issuer">กรมพัฒนาฝีมือแรงงาน</div>
+              <h4 class="cert-name">Microsoft Digital Literacy (ทักษะดิจิทัล)</h4>
+            </div>
+            <span class="neo-badge badge-green cert-year-tag">YEAR 2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MENU: กิจกรรมระหว่างทำงาน (Work Activities & Continuous Learning)
+         =================================================================== -->
+    <section id="sec-work-activities" class="portfolio-section">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-blue">DIGITAL & TRANSFORMATION</span>
+          <h2 class="section-title">กิจกรรมระหว่างทำงานและการพัฒนาตนเอง</h2>
+          <p class="section-subtitle">การเรียนรู้อย่างต่อเนื่อง การเชื่อมต่องานบัญชีสู่นวัตกรรมเทคโนโลยีและการพัฒนาองค์กร</p>
+        </div>
+      </div>
+
+      <!-- Core Transformation Journey Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; margin-bottom: 2rem;">
+        <div class="neo-card" style="background: var(--color-yellow);">
+          <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.6rem;">
+            ⚙️ DIGITAL & TRANSFORMATION
+          </h3>
+          <ul style="list-style: square; padding-left: 1.2rem; line-height: 1.7; font-size: 0.95rem;">
+            <li><strong>ERP Implementations:</strong> ประสบการณ์ตรงใน SAP ECC 6.0 Migration และการเริ่มใช้ระบบ New ERP: Focus One</li>
+            <li><strong>Automation:</strong> ประยุกต์ใช้ซอฟต์แวร์หุ่นยนต์ RPA ผ่าน Automation Anywhere เพื่อลดกระบวนการบัญชีซ้ำซ้อน</li>
+            <li><strong>Digital Citizenship:</strong> หลักสูตรดิจิทัลจาก TDGA, Microsoft และ Accenture</li>
+          </ul>
+        </div>
+
+        <div class="neo-card" style="background: var(--color-blue); color: #fff;">
+          <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 0.6rem; color: #fff;">
+            💡 สิ่งที่สะท้อนจากเส้นทางนี้
+          </h3>
+          <p style="line-height: 1.7; font-size: 0.95rem;">
+            "งานบัญชีไม่ได้มีแค่เรื่องบันทึกรายการและการออกรายงานตัวเลขเท่านั้น แต่ยังครอบคลุมถึงการออกแบบกระบวนการ (Process Design), สถาปัตยกรรมระบบ (Systems), บุคลากร (People), การควบคุมภายใน (Controls) และการพัฒนาอย่างต่อเนื่อง"
+          </p>
+          <div style="margin-top: 0.8rem; font-style: italic; color: #FFE15D; font-weight: 700;">
+            From "Doing the work" ➔ Toward "Understanding and improving how the work works"
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Master's Degree Card -->
+      <div class="neo-card" style="border-left: 8px solid var(--color-coral); margin-bottom: 2rem;">
+        <span class="neo-badge badge-coral">THE NEXT CHAPTER</span>
+        <h3 style="font-size: 1.5rem; font-weight: 900; margin: 0.6rem 0;">
+          ทำไมจึงเรียนต่อปริญญาโทตอนนี้? (FROM ACCOUNTING OPERATIONS TO BUSINESS & PEOPLE DEVELOPMENT)
+        </h3>
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem;">
+          ประสบการณ์กว่า 17 ปีทำให้ผมตระหนักว่า <strong>ความสำเร็จของงานไม่ได้เกิดจากความถูกต้องของตัวเลขเพียงอย่างเดียว แต่เกิดจากการทำงานร่วมกันของคน กระบวนการ ระบบ เทคโนโลยี และการเปลี่ยนแปลงขององค์กร</strong>
+        </p>
+        <p style="font-size: 0.95rem; color: #444; line-height: 1.6;">
+          การศึกษาปริญญาโทด้าน <em>Industrial Business and Human Resource Development</em> ณ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ จึงเป็นการต่อยอดจากสิ่งที่พบในโลกการทำงาน เพื่อทำความเข้าใจธุรกิจและการพัฒนาคนให้ลึกซึ้งยิ่งขึ้น และนำกลับมาเชื่อมกับประสบการณ์ด้าน Accounting, Transformation และ Technology
+        </p>
+      </div>
+
+      <!-- Key Philosophy Banner -->
+      <div class="neo-card neo-card-green" style="text-align: center; padding: 2rem;">
+        <h3 style="font-size: 1.35rem; font-weight: 900; line-height: 1.4;">
+          “The purpose of this presentation is not only to show what I have done,<br>
+          but to help the reader understand how those experiences shaped who I am today.”
+        </h3>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MENU: DASHBOARD รายงานผลงาน (Interactive Visualizations)
+         =================================================================== -->
+    <section id="sec-dashboard" class="portfolio-section active">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-yellow">METRICS & ANALYTICS</span>
+          <h2 class="section-title">Dashboard รายงานผลงานและสถิติสะสม</h2>
+          <p class="section-subtitle">ภาพรวมสถิติประสบการณ์ 17+ ปี ความครอบคลุมธุรกิจ และดัชนีศักยภาพรอบด้าน</p>
+        </div>
+      </div>
+
+      <!-- Metric Stat Cards -->
+      <div class="dash-metrics-grid">
+        <div class="metric-card" style="border-bottom: 8px solid var(--color-yellow);">
+          <div class="metric-icon">⏳</div>
+          <div class="metric-value">17+</div>
+          <div class="metric-label">ปีแห่งประสบการณ์วิชาชีพ (ตั้งแต่ 2009)</div>
+        </div>
+
+        <div class="metric-card" style="border-bottom: 8px solid var(--color-blue);">
+          <div class="metric-icon">🏢</div>
+          <div class="metric-value">7</div>
+          <div class="metric-label">กลุ่มธุรกิจเครือ SCG ที่รับผิดชอบ</div>
+        </div>
+
+        <div class="metric-card" style="border-bottom: 8px solid var(--color-coral);">
+          <div class="metric-icon">🚀</div>
+          <div class="metric-value">3</div>
+          <div class="metric-label">เมกะโปรเจกต์ ERP & Transformation</div>
+        </div>
+
+        <div class="metric-card" style="border-bottom: 8px solid var(--color-green);">
+          <div class="metric-icon">📜</div>
+          <div class="metric-value">8+</div>
+          <div class="metric-label">ใบรับรองสากล (Certifications)</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="dash-charts-grid">
+        <!-- Radar Chart: Competencies -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">🎯 ดัชนีความเชี่ยวชาญรอบด้าน (Core Competency Radar)</span>
+            <span class="neo-badge badge-yellow">SKILL MATRIX</span>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chartCompetency"></canvas>
+          </div>
+          <div style="font-size: 0.85rem; color: #555; margin-top: 1rem;">
+            * ครอบคลุมทั้ง Financial Operations, ระบบ ERP ขนาดใหญ่, ระบบอัตโนมัติ RPA และการพัฒนาทรัพยากรมนุษย์
+          </div>
+        </div>
+
+        <!-- Career Progression Timeline -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">📊 เส้นทางการเติบโตตามช่วงเวลา (Career Timeline Arc)</span>
+            <span class="neo-badge badge-blue">YEARS PER ROLE</span>
+          </div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chartCareerTimeline"></canvas>
+          </div>
+          <div style="font-size: 0.85rem; color: #555; margin-top: 1rem;">
+            * ความต่อเนื่องในการปฏิบัติงานและพัฒนาจากผู้ปฏิบัติงานสู่ผู้นำการเปลี่ยนแปลง (Supervisor & Key User)
+          </div>
+        </div>
+
+        <!-- Business Unit Exposure -->
+        <div class="chart-card" style="grid-column: 1 / -1;">
+          <div class="chart-header">
+            <span class="chart-title">🌐 สัดส่วนความเชี่ยวชาญในกลุ่มธุรกิจ (SCG Business Coverage Exposure)</span>
+            <span class="neo-badge badge-coral">7 SCG UNITS + KPMG</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; align-items: center;">
+            <div class="chart-canvas-wrap" style="height: 280px;">
+              <canvas id="chartBUCoverage"></canvas>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div class="neo-card" style="padding: 1rem; border-left: 6px solid var(--color-yellow);">
+                <strong>SCG Cement and Green Solutions & SCGC</strong>
+                <p style="font-size: 0.88rem; color: #444;">ปัจจุบันดูแลงาน Retail & Non-SAP Accounting และระบบ New ERP: Focus One</p>
+              </div>
+              <div class="neo-card" style="padding: 1rem; border-left: 6px solid var(--color-blue);">
+                <strong>SCG Cement-Building Materials</strong>
+                <p style="font-size: 0.88rem; color: #444;">Order to Cash, Overseas Operations Hub, และ BIC Transformation</p>
+              </div>
+              <div class="neo-card" style="padding: 1rem; border-left: 6px solid var(--color-coral);">
+                <strong>SCG Packaging & SCG Paper</strong>
+                <p style="font-size: 0.88rem; color: #444;">SAP ECC 6.0 Migration และ Costing Information Management</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         MENU: ช่องทางติดต่อ (Contact Channels & Interactive Form)
+         =================================================================== -->
+    <section id="sec-contact" class="portfolio-section">
+      <div class="section-header-box">
+        <div>
+          <span class="neo-badge badge-coral">GET IN TOUCH</span>
+          <h2 class="section-title">ช่องทางติดต่อ (CONTACT INFORMATION)</h2>
+          <p class="section-subtitle">ติดต่อสื่อสาร ร่วมงาน หรือนัดหมายเพื่อแลกเปลี่ยนประสบการณ์</p>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info Cards -->
+        <div class="contact-info-panel">
+          <!-- Phone Card -->
+          <div class="contact-item-card">
+            <div class="contact-icon-box">📞</div>
+            <div class="contact-details">
+              <div class="contact-type">เบอร์โทรศัพท์ติดต่อ (MOBILE)</div>
+              <div class="contact-value">092 879 4594</div>
+              <div style="margin-top: 0.6rem; display: flex; gap: 0.5rem;">
+                <a href="tel:0928794594" class="neo-btn neo-btn-sm neo-btn-yellow">โทรออกทันที</a>
+                <button class="neo-btn neo-btn-sm neo-btn-white copy-btn" data-copy="0928794594">คัดลอกเบอร์</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email Card -->
+          <div class="contact-item-card">
+            <div class="contact-icon-box">✉️</div>
+            <div class="contact-details">
+              <div class="contact-type">อีเมลติดต่อ (EMAIL ADDRESS)</div>
+              <div class="contact-value">champ.667@gmail.com</div>
+              <div style="margin-top: 0.6rem; display: flex; gap: 0.5rem;">
+                <a href="mailto:champ.667@gmail.com" class="neo-btn neo-btn-sm neo-btn-blue">ส่งอีเมล</a>
+                <button class="neo-btn neo-btn-sm neo-btn-white copy-btn" data-copy="champ.667@gmail.com">คัดลอกอีเมล</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workplace Card -->
+          <div class="contact-item-card">
+            <div class="contact-icon-box">🏢</div>
+            <div class="contact-details">
+              <div class="contact-type">สถานที่ทำงาน (OFFICE LOCATION)</div>
+              <div class="contact-value" style="font-size: 1rem;">
+                สำนักงานบัญชีกลาง (Corporate Accounting Office)<br>
+                บริษัท ปูนซิเมนต์ไทย จำกัด (มหาชน) (SCG)
+              </div>
+              <div style="margin-top: 0.6rem;">
+                <span class="neo-badge badge-green">BANGSUE, BANGKOK</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+            <h3 style="font-size: 1.3rem; font-weight: 900;">✉️ ส่งข้อความติดต่อโดยตรง</h3>
+            <span class="neo-badge badge-yellow">DIRECT MESSAGE</span>
+          </div>
+
+          <form id="portfolio-contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">ชื่อ - นามสกุล / ชื่อหน่วยงาน</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="กรุณาระบุชื่อของคุณ" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">อีเมลสำหรับติดต่อกลับ</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="example@domain.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">หัวข้อที่ต้องการติดต่อ</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="เช่น ERP Consulting, บรรยายพิเศษ, สอบถามข้อมูล" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">ข้อความรายละเอียด</label>
+              <textarea id="contact-message" class="form-textarea" rows="4" placeholder="พิมพ์ข้อความที่ต้องการส่งถึงคุณณัฐวุฒิ..." required></textarea>
+            </div>
+
+            <button type="submit" class="neo-btn neo-btn-coral" style="width: 100%;">
+              ส่งข้อความติดต่อ (SEND MESSAGE) →
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       CERTIFICATE LIGHTBOX MODAL
+       ===================================================================== -->
+  <div id="cert-modal" class="neo-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title" id="modal-cert-title">ใบรับรองวิชาชีพ</div>
+        <button class="modal-close" id="modal-cert-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img id="modal-cert-image" src="" alt="Certificate Preview" />
+        </div>
+        <div style="display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 0.6rem;">
+          <span class="neo-badge badge-blue" id="modal-cert-issuer">Accenture</span>
+          <span class="neo-badge badge-yellow" id="modal-cert-year">2021</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       PRESENTATION SLIDES VIEWER MODAL (All 13 Pages)
+       ===================================================================== -->
+  <div id="slide-modal" class="neo-modal">
+    <div class="modal-dialog" style="max-width: 960px;">
+      <div class="modal-header">
+        <div class="modal-title">📄 CV PRESENTATION SLIDES (ต้นฉบับทั้ง 13 หน้า)</div>
+        <button class="modal-close" id="slide-close-btn" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-wrap" style="max-height: 70vh;">
+          <img id="slide-viewer-img" src="./assets/images/page_1.png" alt="Slide Page" />
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 500px; margin-top: 0.5rem;">
+          <button id="slide-prev-btn" class="neo-btn neo-btn-sm neo-btn-white">← ก่อนหน้า</button>
+          <span id="slide-counter-badge" class="neo-badge badge-yellow">หน้า 1 / 13</span>
+          <button id="slide-next-btn" class="neo-btn neo-btn-sm neo-btn-white">ถัดไป →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       FOOTER (FLUID WIDTH & SPECIFIED REQUIREMENT)
+       Requirement: footer fluid width เติมสีพื้นหลัง เทาอ่อน 
+       ระบบเว็บส่วนบุคคล พัฒนาโดย [Champagne No.69]
+       ===================================================================== -->
+  <footer class="neo-footer-fluid">
+    <div class="footer-inner">
+      <div class="footer-badge">PERSONAL PORTFOLIO & PERFORMANCE SYSTEM</div>
+      <div class="footer-main-text">
+        ระบบเว็บส่วนบุคคล พัฒนาโดย <span class="footer-highlight">[Champagne No.69]</span>
+      </div>
+      <div class="footer-sub-note">
+        ออกแบบด้วยสไตล์ Neobrutalism Minimalist • พัฒนาขึ้นสำหรับคุณณัฐวุฒิ สุขกิจภากรณ์ (Nattawut Sukkijpagorn)
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
